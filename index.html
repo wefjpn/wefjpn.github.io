@@ -1,155 +1,262 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0045)file:///C:/Users/tecom/Downloads/index_1.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>World's End Folklore.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Noto+Serif+JP:wght@200;300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1816;
-    --paper: #f7f4ef;
-    --accent: #7a6550;
-    --muted: #9e8e7e;
-    --line: rgba(122,101,80,0.15);
+    --bg: #0a0c0f;
+    --surface: #111318;
+    --border: rgba(255,255,255,0.07);
+    --border-hover: rgba(255,255,255,0.18);
+    --text: #e8eaed;
+    --muted: #6b7280;
+    --accent: #4ade80;
+    --accent-dim: rgba(74,222,128,0.08);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Noto Serif JP', serif;
-    font-weight: 200;
-    line-height: 1.9;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
     min-height: 100vh;
   }
 
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   header {
-    padding: 5rem 2rem 4rem;
-    max-width: 680px;
+    padding: 4rem 1.5rem 3rem;
+    max-width: 720px;
     margin: 0 auto;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
   }
 
   .company-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.4rem, 4vw, 2rem);
-    font-weight: 300;
-    font-style: italic;
-    letter-spacing: 0.03em;
-    color: var(--ink);
-    margin-bottom: 0.3rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
   }
 
   .company-sub {
-    font-size: 0.68rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
     color: var(--muted);
+    letter-spacing: 0.1em;
   }
 
   section {
-    max-width: 680px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 3.5rem 2rem;
-    border-bottom: 1px solid var(--line);
+    padding: 3rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
   }
 
   .label {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 0.65rem;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
     margin-bottom: 1.5rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .label::before {
+    content: '//';
+    opacity: 0.5;
   }
 
   p {
-    font-size: 0.85rem;
-    color: #3d3530;
-    line-height: 2.2;
+    font-size: 0.88rem;
+    color: #9ca3af;
+    line-height: 2;
     margin-bottom: 1rem;
   }
 
   p:last-child { margin-bottom: 0; }
 
-  .info-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.8rem;
-  }
-
-  .info-table tr { border-bottom: 1px solid var(--line); }
-  .info-table tr:first-child { border-top: 1px solid var(--line); }
-
-  .info-table td {
-    padding: 1rem 0;
-    vertical-align: top;
-    line-height: 1.8;
-  }
-
-  .info-table td:first-child {
-    width: 130px;
-    color: var(--muted);
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    padding-right: 2rem;
-    white-space: nowrap;
+  p.lead {
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 400;
   }
 
   .product {
     display: flex;
-    gap: 1.2rem;
+    gap: 1.5rem;
     align-items: flex-start;
     text-decoration: none;
     color: inherit;
     padding: 1.5rem;
-    border: 1px solid var(--line);
-    transition: border-color 0.25s;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: border-color 0.2s, background 0.2s;
+    border-radius: 4px;
   }
 
-  .product:hover { border-color: var(--accent); }
+  .product:hover {
+    border-color: var(--border-hover);
+    background: var(--accent-dim);
+  }
 
-  .product-icon { font-size: 1.6rem; line-height: 1; padding-top: 0.1rem; }
+  .product-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1a1f2e, #0d1117);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
 
-  .product-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 300;
+  .product-platform {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
     margin-bottom: 0.3rem;
   }
 
+  .product-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+
   .product-desc {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     color: var(--muted);
     margin: 0;
-    line-height: 1.8;
+    line-height: 1.7;
+  }
+
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+
+  .info-table tr { border-bottom: 1px solid var(--border); }
+  .info-table tr:first-child { border-top: 1px solid var(--border); }
+
+  .info-table td {
+    padding: 0.9rem 0;
+    vertical-align: top;
+    line-height: 1.7;
+  }
+
+  .info-table td:first-child {
+    width: 120px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    padding-right: 2rem;
+    white-space: nowrap;
   }
 
   footer {
-    max-width: 680px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 2.5rem 2rem;
-    font-size: 0.68rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
     color: var(--muted);
-    letter-spacing: 0.15em;
+  }
+
+  .footer-copy {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    opacity: 0.5;
   }
 </style>
 </head>
 <body>
 
 <header>
+  <div class="header-top">
+    <div class="dot"></div>
+    <span class="badge">software studio</span>
+  </div>
   <div class="company-name">World's End Folklore.</div>
-  <div class="company-sub">Software Studio , Japan</div>
+  <div class="company-sub">wefjpn · Gunma, Japan</div>
 </header>
 
 <section>
   <div class="label">About</div>
-  <p>世界の果てから、現実をアップデートする。</p>
+  <p class="lead">世界の果てから、現実をアップデートする。</p>
   <p>
     すべての場所が世界の果てであり、世界の中心である—
     その人がいる場所こそが、その人の世界の中心です。
@@ -166,8 +273,9 @@
   <a class="product" href="https://play.google.com/store/apps/details?id=com.notifvault" target="_blank" rel="noopener">
     <div class="product-icon">👁</div>
     <div>
+      <div class="product-platform">Android App</div>
       <div class="product-name">Eye of the Storm</div>
-      <p class="product-desc">Android向け通知管理アプリ。通知をためて、自分のペースで確認する。</p>
+      <p class="product-desc">通知をためて、自分のペースで確認する。Android向け通知管理アプリ。</p>
     </div>
   </a>
 </section>
@@ -175,7 +283,7 @@
 <section>
   <div class="label">Company</div>
   <table class="info-table">
-    <tr>
+    <tbody><tr>
       <td>社名</td>
       <td>合同会社ワールズ・エンド・フォークロア</td>
     </tr>
@@ -195,12 +303,14 @@
       <td>連絡先</td>
       <td>wefjpn@gmail.com</td>
     </tr>
-  </table>
+  </tbody></table>
 </section>
 
 <footer>
-  © 2026 World's End Folklore.
+  <span class="footer-name">World's End Folklore.</span>
+  <span class="footer-copy">© 2026 wefjpn</span>
 </footer>
 
-</body>
-</html>
+
+
+</body></html>
