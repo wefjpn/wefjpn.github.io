@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World's End Folklore.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Noto+Serif+JP:wght@200;300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1816;
+    --paper: #f7f4ef;
+    --accent: #7a6550;
+    --muted: #9e8e7e;
+    --line: rgba(122,101,80,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 200;
+    line-height: 1.9;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 5rem 2rem 4rem;
+    max-width: 680px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .company-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .company-sub {
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: #3d3530;
+    line-height: 2.2;
+    margin-bottom: 1rem;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+
+  .info-table tr { border-bottom: 1px solid var(--line); }
+  .info-table tr:first-child { border-top: 1px solid var(--line); }
+
+  .info-table td {
+    padding: 1rem 0;
+    vertical-align: top;
+    line-height: 1.8;
+  }
+
+  .info-table td:first-child {
+    width: 130px;
+    color: var(--muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    padding-right: 2rem;
+    white-space: nowrap;
+  }
+
+  .product {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    transition: border-color 0.25s;
+  }
+
+  .product:hover { border-color: var(--accent); }
+
+  .product-icon { font-size: 1.6rem; line-height: 1; padding-top: 0.1rem; }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    margin-bottom: 0.3rem;
+  }
+
+  .product-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="company-name">World's End Folklore.</div>
+  <div class="company-sub">Software Studio , Japan</div>
+</header>
+
+<section>
+  <div class="label">About</div>
+  <p>世界の果てから、現実をアップデートする。</p>
+  <p>
+    すべての場所が世界の果てであり、世界の中心である—
+    その人がいる場所こそが、その人の世界の中心です。
+    そしてその場所は、誰かにとっての世界の果てかも知れない。
+    世界はすべての人の世界が寄り集まって作られています。
+    すべての世界は等しく価値を持ちます。
+    私たちはその個々人の、かけがえない唯一無二の世界、日常を少しだけ豊かにするための
+    小さなプロダクトを作っています。
+  </p>
+</section>
+
+<section>
+  <div class="label">Products</div>
+  <a class="product" href="https://play.google.com/store/apps/details?id=com.notifvault" target="_blank" rel="noopener">
+    <div class="product-icon">👁</div>
+    <div>
+      <div class="product-name">Eye of the Storm</div>
+      <p class="product-desc">Android向け通知管理アプリ。通知をためて、自分のペースで確認する。</p>
+    </div>
+  </a>
+</section>
+
+<section>
+  <div class="label">Company</div>
+  <table class="info-table">
+    <tr>
+      <td>社名</td>
+      <td>合同会社ワールズ・エンド・フォークロア</td>
+    </tr>
+    <tr>
+      <td>所在地</td>
+      <td>群馬県甘楽郡福島102番地13 D1-1</td>
+    </tr>
+    <tr>
+      <td>設立</td>
+      <td>2019年</td>
+    </tr>
+    <tr>
+      <td>事業内容</td>
+      <td>Androidアプリケーション開発・販売</td>
+    </tr>
+    <tr>
+      <td>連絡先</td>
+      <td>wefjpn@gmail.com</td>
+    </tr>
+  </table>
+</section>
+
+<footer>
+  © 2026 World's End Folklore.
+</footer>
+
+</body>
+</html>
